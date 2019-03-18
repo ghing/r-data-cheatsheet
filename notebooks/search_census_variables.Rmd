@@ -1,0 +1,20 @@
+---
+title: "Search census variables"
+output: html_notebook
+---
+
+Via [Basic usage of tidycensus](https://walkerke.github.io/tidycensus/articles/basic-usage.html)
+
+```{r setup}
+library(tidycensus)
+```
+
+Load the variables and view them in RStudio's variable inspector. Use the search or filter features to narrow down the variable names.
+
+```{r}
+v17 <- load_variables(2017, "acs5", cache = TRUE)
+
+View(v17)
+```
+
+

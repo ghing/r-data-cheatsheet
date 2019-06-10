@@ -1,0 +1,8 @@
+---
+title: "Group by the year (or month) of a date variable"
+output: html_notebook
+---
+
+Use [`floor_date()`](https://lubridate.tidyverse.org/reference/round_date.html) from [lubridate](https://lubridate.tidyverse.org/).
+
+Via [plot - How do I group my date variable into month/year in R? - Stack Overflow](https://stackoverflow.com/questions/33221425/how-do-i-group-my-date-variable-into-month-year-in-r).

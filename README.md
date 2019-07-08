@@ -6,6 +6,10 @@ These are notebooks that describe tasks that I use when working with data for jo
 
 - [Search census variables](notebooks/search_census_variables.Rmd)
 
+## Selecting and filtering data
+
+- [Get dataframe value from a vector of variable names](notebooks/value_from_vector_of_variable_names.Rmd)
+
 ## Transforming data
 
 - [Group by part of a date variable](notebooks/group_by_month_or_year_from_date.Rmd)

@@ -1,0 +1,48 @@
+---
+title: "Get a value of a different variable for each row of a dataframe based on a vector of variable names"
+output: html_notebook
+---
+
+tl;dr: Use a matrix to index the dataframe.
+
+Source: [r - How to extract different columns from each row of a data.frame?](https://stackoverflow.com/questions/25584039/how-to-extract-different-columns-from-each-row-of-a-data-frame)
+
+## Motivation
+
+You have a wide dataframe with consistently named columns and another column that can be used to determine which column to select.
+
+## Create toy data
+
+```{r make_data, echo = FALSE}
+df <- data.frame(
+  quarter = c(1, 2, 3, 4),
+  q1_val = c(100, 200, 300, 400),
+  q2_val = c(400, 100, 200, 300),
+  q3_val = c(300, 400, 100, 200),
+  q4_val = c(200, 300, 400, 100)
+)
+
+df
+```
+
+## Get variable names based on a variable
+
+```{r get_variable_names}
+var_names <- sprintf("q%d_val", df$quarter)
+
+var_names
+```
+
+## Get numeric indices of the variable names
+
+```{r get_var_name_indices}
+var_name_indices <- match(var_names, colnames(df))
+
+var_name_indices
+```
+
+## Use matrix indexing to get the values
+
+```{r get_values}
+df[cbind(seq_along(var_name_indices), var_name_indices)]
+```

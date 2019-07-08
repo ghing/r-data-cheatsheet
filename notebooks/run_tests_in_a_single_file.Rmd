@@ -1,0 +1,54 @@
+---
+title: "Run testthat tests in a single file"
+output: html_notebook
+---
+
+## tl;dr: Use `test_file()`
+
+See the [test_file](https://testthat.r-lib.org/reference/test_file.html) documentation.
+
+## Motivation
+
+The [testthat](https://testthat.r-lib.org/) package works well for writing unit tests for R functions. However, the well-documented use cases assume that you're developing tests for a package. With many of my data analysis projects, I just throw utility functions that I call from a notebook in `R/somefile.R` in the root of my project directory. There are still cases where I want to run tests on this code. Furthermore, as I'm often developing these functions incrementally, I want to just run tests for a particular file rather than all the tests in a project.
+
+
+## Layout
+
+Even though I'm not developing a package, I lay out my code similar to how I would if I was developing a package.
+
+So, my filesystem might look something like this:
+
+- `R`
+- `R/util.R`
+- `myproject.Rproj`
+- `tests/testthat/test_util.R`  
+
+
+That is, the unit tests for the functions in `R/util.R` will live in `tests/testthat/test_util.R`.
+
+## Sourcing the file under test 
+
+In the test script I would source the file containing the functions I want to test with the help of the [here](https://github.com/r-lib/here) package:
+
+```
+library("here")
+
+source(file.path(here::here(), "R", "util.R"))
+```
+
+## Running tests in one file
+
+In an R console, run:
+
+```
+library("here")
+library("testthat")
+
+tests_path <- file.path(
+  here::here(),
+  'tests',
+  'testthat',
+  'test_util.R'
+)
+test_file(tests_path)
+```

@@ -2,6 +2,12 @@
 
 These are notebooks that describe tasks that I use when working with data for journalism in R but don't do often enough to remember off the top of my head.
 
+These are mostly recipes for things that took me a bit of time to Google or for which I didn't know the right language.
+
+## Fundamentals
+
+- [Everything is a vector](notebooks/everything_is_a_vector.Rmd)
+
 ## Finding data
 
 - [Search census variables](notebooks/search_census_variables.Rmd)

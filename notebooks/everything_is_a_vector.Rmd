@@ -1,0 +1,46 @@
+---
+title: "Everything is a vector"
+output: html_notebook
+---
+
+## Motivation
+
+One of the hardest things about R was diving into the language after being pretty familiar with other programming languages. Some of the language was confusing to me. Why is the equivalent of what is called a "string" in Python called a "character vector" in R?
+
+## Everything is a vector
+
+Things made a lot more sense when I read this from [A Programmer's Guide To R - The Vector](https://www.i-programmer.info/programming/other-languages/1706-a-programmers-guide-to-r.html):
+
+> As already mentioned, R doesn't have primitive data types in the way that other languages do. In R even the simplest numeric value is an example of a vector. 
+
+That means this wild bit of code works:
+
+```{r}
+1[[1]]
+```
+
+That is because the literal value of `1` is actually a numeric vector with one value, the number 1.
+
+```{r}
+length(1)
+```
+
+You can read more about atomic vectors in the [data structures](http://adv-r.had.co.nz/Data-structures.html) section of Advanced R.
+
+## Vectorized functions
+
+I had read a bit about vectorizing functions in R, but I was confused because it seems like many functions are already vectorized. That is they work on both a single value and a list of values.
+
+For example:
+
+```{r}
+nchar("foo")
+
+nchar(c("foo", "bar"))
+```
+
+This description of vectorization in R makes this behavior more clear to me:
+
+> Vectorized functions usually involve a behind-the-scenes loop in a low-level language (C or Fortran), which runs way faster than a pure R loop. 
+
+That's from [Let's talk about vectorization](http://alyssafrazee.com/2014/01/29/vectorization.html).

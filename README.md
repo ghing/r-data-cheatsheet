@@ -12,6 +12,10 @@ These are mostly recipes for things that took me a bit of time to Google or for 
 
 - [Search census variables](notebooks/search_census_variables.Rmd)
 
+## Importing data
+
+- [Copying data from the system clipboard](notebooks/copy_from_clipboard.Rmd)
+
 ## Selecting and filtering data
 
 - [Get dataframe value from a vector of variable names](notebooks/value_from_vector_of_variable_names.Rmd)

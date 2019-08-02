@@ -1,0 +1,24 @@
+---
+title: "Copy data from the system clipboard"
+output: html_notebook
+---
+
+## On Windows
+
+```{r}
+df <- readClipboard()
+```
+
+or
+
+```{r}
+df <- read.table(file = "clipboard", sep = "t", header=TRUE)
+```
+
+Source: [How to Use the Clipboard to Copy and Paste Data in R](https://www.dummies.com/programming/r/how-to-use-the-clipboard-to-copy-and-paste-data-in-r/)
+
+## On Mac OS
+
+```{r}
+df <- read.table(pipe("pbpaste"), sep="\t", header=T)
+```

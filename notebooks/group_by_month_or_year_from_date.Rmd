@@ -5,4 +5,4 @@ output: html_notebook
 
 Use [`floor_date()`](https://lubridate.tidyverse.org/reference/round_date.html) from [lubridate](https://lubridate.tidyverse.org/).
 
-Via [plot - How do I group my date variable into month/year in R? - Stack Overflow](https://stackoverflow.com/questions/33221425/how-do-i-group-my-date-variable-into-month-year-in-r).
+Source: [plot - How do I group my date variable into month/year in R?](https://stackoverflow.com/questions/33221425/how-do-i-group-my-date-variable-into-month-year-in-r).

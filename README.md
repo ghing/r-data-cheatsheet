@@ -26,7 +26,17 @@ These are mostly recipes for things that took me a bit of time to Google or for 
 
 ## Testing
 
-- [Run testthat tests in a single file](notebooks/run_tests_in_a_single_file.Rmd) 
+- [Run testthat tests in a single file](notebooks/run_tests_in_a_single_file.Rmd)at e
+
+## RStudio
+
+I do most of my work with R using RStudio. These are some helpful tips I've learned about working in that environment.
+
+### Vim keybindings
+
+You can change the keyboard shortcuts in RStudio to mimic that of the vim editor (and a few other editors).
+
+Source: [Customizing RStudio](https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-RStudio).
 
 ## Other resources
 

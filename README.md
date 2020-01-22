@@ -31,3 +31,4 @@ These are mostly recipes for things that took me a bit of time to Google or for 
 ## Other resources
 
 - [How Do I? …](https://smach.github.io/R4JournalismBook/HowDoI.html): Sharon Machlis has made a searchable table of tasks in R to accompany her book [Practical R for Mass Communication and Journalism](https://www.crcpress.com/Practical-R-for-Mass-Communication-and-Journalism/Machlis/p/book/9781138726918).
+- [RStudio Cheat Sheets](https://rstudio.com/resources/cheatsheets/): RStudio has a number of PDF cheatsheets about a wide range of topics and libraries including visualization using ggplot2 and data transformation using dplyr. 

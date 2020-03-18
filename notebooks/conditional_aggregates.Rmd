@@ -1,0 +1,53 @@
+---
+title: "Conditional Aggregates"
+output: html_notebook
+---
+
+```{r setup}
+library(dplyr)
+```
+
+For this example, we'll use the mtcars data set.
+
+```{r load_data}
+data(mtcars)
+
+head(mtcars)
+```
+
+It's straightforward to get aggregates using `group_by` and `summarize`. For example, we can get the average miles per gallon and weight by the numbers of cylinders in the car.
+
+```{r simple_agg}
+mtcars %>%
+  group_by(cyl) %>%
+  summarize(
+    avg_mpg = mean(mpg),
+    avg_wt = mean(wt)
+  )
+```
+
+You can also imagine drilling down by grouping by two variables.
+
+```{r groupby_2_var}
+mtcars %>%
+  group_by(cyl, gear) %>%
+  summarize(
+    avg_mpg = mean(mpg),
+    avg_wt = mean(wt)
+  )
+```
+
+But what if we want to get aggregates for all items in a group, but also add aggregate columns based on some condition? To get the conditional aggregate, just subset the variable inside the aggregate function.
+
+```{r conditional_agg}
+mtcars %>%
+  group_by(cyl) %>%
+  summarize(
+    avg_mpg = mean(mpg),
+    avg_wt = mean(wt),
+    # Subset the variable inside the aggregate function
+    avg_wt_3_gear = mean(wt[gear == 3]),
+    avg_wt_4_5_gear = mean(wt[gear >= 4])
+  )
+```
+

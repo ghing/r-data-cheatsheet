@@ -36,6 +36,7 @@ Source: [Quick-R: Viewing Data](https://support.rstudio.com/hc/en-us/articles/20
 
 - [Group by part of a date variable](notebooks/group_by_month_or_year_from_date.Rmd)
 - [Conditional aggregates on groups](notebooks/conditional_aggregates.Rmd). This is sort of like a "count if".
+- [Convert coordinates in a CSV to spatial data](notebooks/coordinates_in_csv.Rmd)
 
 ## Testing
 
